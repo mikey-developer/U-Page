@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="card--all">
+    <div class="card--content">
+        <h4>Log in</h4>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" class="form-control" required>
+            <input type="text" name="password" placeholder="Password" class="form-control mt-2" required>
+            New in U Page? - <a href="{% url 'signup' %}">Create Account</a>
+            <br> 
+            <button class="btn btn-primary mt-2">Log in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

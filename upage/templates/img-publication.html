@@ -1,0 +1,63 @@
+{% extends 'base/main.html' %}
+{% block title %} Image Publication {% endblock %}
+{% block content %} 
+<div class="card--all">
+        <a href="{% url 'home' %}">
+            
+             <div class="card--nav" style="width: 100%; height: 45px; display: inline-block;">
+                <font style="background: #0097A7;color:#FFFFFF;padding:3px;border-radius:5px;">Back</font> Image Post
+            </div>
+        </a>
+  <div class="card--content mt-2">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <div class="card--line">
+                    <textarea class="post" id="myInput" name="content" placeholder="What happening?" required></textarea>
+                    <br>
+                    <img id="blah" src="" width="250px" style="border-radius: 10px;display: none;" />
+                </div>
+
+                <style>
+                    #imgInp {
+                         display: none;
+                    }
+                </style>
+                
+                <button class="btn btn-dark mt-2">Public</button>
+                <label for="imgInp">
+                    <img src="/media/res/gallery.png" width="30px" class="mt-2">
+                </label>
+
+                <input accept="image/*" id="imgInp" type="file" name="image" required />
+            </form>
+            
+            <script>
+                imgInp.onchange = evt => {
+                    const [file] = imgInp.files
+                    if (file) {
+                        blah.src = URL.createObjectURL(file)
+                        document.getElementById('blah').style.display = 'block' 
+                    }
+                }
+
+                const textarea = document.getElementById('myInput');
+
+                textarea.addEventListener('focus', function () {
+                    setTimeout(() => {
+                        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                });
+
+                document.querySelector('textarea').addEventListener('input', function () {
+                this.style.height = 'auto';
+                this.style.height = `${this.scrollHeight}px`;
+                });
+            </script>
+        </div>
+</div>
+        
+        <style>
+            a { color: #424242; }
+        </style>
+
+        {% endblock %}

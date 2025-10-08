@@ -1,0 +1,75 @@
+{% extends 'base/main.html' %}
+{% block title %} U Page - Home {% endblock %}
+{% block content %}
+
+<div class="card--all">
+    <div class="card--nav" style="position: sticky;top: 0;">
+
+
+        <a class="a" href="center">
+                {% if pic.1 %}
+                    <img src="{{ pic.1 }}" width="40px" height="40px" style="object-fit: cover;border-radius: 50%;">
+                {% else %}
+                    <img src="https://u-xyz.uz/res/user.png" width="45px">
+                {% endif %}
+        </a>
+        
+        <div class="plus">
+            <a href="{% url 'post' %}">
+                <img src="/media/res/plus.png" class="fas fa-beat plus-dark" style="width: 50px;">
+            </a>
+        </div>
+            <!-- <h1 class="uverse-nav">uverse</h1> -->
+            <a href="story.php?id=<?= $id ?>">
+                <img src="https://u-xyz.uz/res/upage.png" width="100px" class="dark-iconupage" style="margin-left: 10px;">
+            </a>
+            <img src="https://u-xyz.uz/res/u.png" width="45px" id="u" style="float: right;margin-left: 5px;" class="dark-u" onclick="show()" ondblclick="hide()">
+            <a href="main.php">
+                <img src="https://u-xyz.uz/res/search.png" width="45px" style="float: right;" class="dark-l">
+        </a>
+    </div>
+    {% for item in posts %}
+        <div class="card--content mt-2">
+            <div class="card--line" style="padding: 20px">
+                <h6 class="user-data">
+                    <img src="{{ item.user.1 }}" width="30px" height="30px" style="object-fit: cover;border-radius: 50%;">
+                    {{ item.user.2 }} <font color="#FFFFFF" style="font-size: 12px;background: #1976D2;border-radius: 5px;padding: 3px;">@{{ item.user.3 }}</font>
+                </h6>
+                <span class="content text--content">
+                    {{ item.post.4 }}  <!-- masalan post matni -->
+                </span>
+                {% if item.post.5 %}
+                <br><br>
+                <img src="{{ item.post.5 }}" width="300px" height="auto" style="object-fit: cover;border-radius: 10px;">
+
+                {% endif %}
+                <p class="mt-2" style="font-size: 12px;">{{ item.post.7 }}</p>
+                
+            </div>
+            <br>
+            <a href="{% url 'replies' item.post.0 %}">
+                <i class="fas fa-comment" style="background: #1976D2;"></i>
+            </a>
+            <i class="fas fa-retweet" style="background: #1976D2;"></i>
+            <a href="{% url 'details' item.post.0 %}">
+                <i class="fas fa-ellipsis" style="background: #1976D2;"></i>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+<style>
+    a { text-decoration: none;}
+
+    .plus {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        text-align: right;
+        padding: 35px;
+        background: none;
+        border: none;
+    }
+</style>
+{% endblock %}

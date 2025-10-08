@@ -1,0 +1,38 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="card--all">
+    <a href="{% url 'home' %}">
+        <div class="card--nav" style="width: 100%; height: 45px; display: inline-block;">
+            <font style="background: #0097A7;color:#FFFFFF;padding:3px;border-radius:5px;">Back</font>
+            Replies
+        </div>
+    </a>
+    {% for item in posts %}
+    <div class="card--content mt-2">
+        <div class="card--line" style="padding: 20px">
+            <h6 class="user-data">
+                <img src="{{ item.user.1 }}" width="30px" height="30px" style="object-fit: cover;border-radius: 50%;">
+                {{ item.user.2 }} <font color="#FFFFFF" style="font-size: 12px;background: #1976D2;border-radius: 5px;padding: 3px;">@{{ item.user.3 }}</font>
+            </h6>
+            <span class="content text--content">
+                {{ item.post.4 }}  <!-- masalan post matni -->
+            </span>
+            {% if item.post.5 %}
+            <br><br>
+            <img src="{{ item.post.5 }}" width="300px" height="auto" style="object-fit: cover;border-radius: 10px;">
+
+            {% endif %}
+            <p class="mt-2" style="font-size: 12px;">{{ item.post.7 }}</p>
+            
+        </div>
+    </div>
+
+    <div class="card--content mt-2">
+        <form action="" method="post">
+            <input type="text" class="form-control" name="comment" placeholder="Comment/Reply..." required>
+            <button class="btn btn-success mt-2" type="submit">Comment</button>
+        </form>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

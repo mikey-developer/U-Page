@@ -1,0 +1,71 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="card--all">
+    <a href="{% url 'home' %}">
+
+        <div class="card--nav" style="width: 100%; height: 45px; display: inline-block;">
+            <font style="background: #0097A7;color:#FFFFFF;padding:3px;border-radius:5px;">Back</font>
+            Publication
+        </div>
+    </a>
+  <div class="card--content mt-2">
+    <p class="text--content">
+      You haven't saved stickers <a class="text text-primary" href="#">How can i save/create stickers?</a>
+    </p>
+</div>
+  <br><br><br><br><br><br><br><br><br>
+</div>
+    <div class="card--content mt-2" style="position: fixed;bottom: 0;">
+        <div class="card--line">
+
+            <form method="post">
+                {% csrf_token %}
+                <textarea id="myInput" class="post" name="content" placeholder="What happening?" required></textarea>
+                <input type="number" id="paid" class="form-control" style="width: 100px;display: none;" name="paid" placeholder="Likes...">
+                
+                <button class="btn btn-primary mt-2">Post</button>
+            </form>
+        </div>
+<br>
+<a href="{% url 'img-post' %}">
+            <img src="/media/res/gallery.png" class="pic">
+        </a>
+        <a href="mic-post.php">
+            <img src="/media/res/clapperboard.png" class="pic">
+        </a>
+        <a href="ai.php?content=hello">
+            <img src="/media/res/ai.png" class="pic">
+        </a>
+        <img src="/media/res/premium.png" onclick="show()" ondblclick="hide()" width="25px" />
+    </div>
+    <script>
+        document.querySelector('textarea').addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = `${this.scrollHeight}px`;
+        });
+        
+        function show() {
+            document.getElementById("paid").style.display = "block";
+        }
+
+        function hide() {
+            document.getElementById("paid").style.display = "none";
+        }
+</script>
+<style>
+    a { color: #424242; text-decoration: none; }
+    .pic { 
+        width: 25px;
+        height: 25px;
+    }
+    .post {
+        width: 100%;
+        height: auto;
+        border: none;
+        outline: none;
+        background: none;
+        color: #424242;
+    }
+</style>
+{% endblock %}

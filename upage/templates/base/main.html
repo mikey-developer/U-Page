@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="U Page" />
+    <meta property="og:image" content="res/uicon.jpg" />
+    <meta property="og:description" content="Social media sharing">
+    <link rel="icon" href="res/uicon.jpg" type="image/x-icon"/> 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- <link rel="stylesheet" href=""> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        .card--all {
+            width: 100%;
+            height: auto;
+            border: none;
+            background: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card--nav {
+            width: 100%;
+            height: 65px;
+            border: none;
+            background: #FFFFFF;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .card--content {
+            width: 100%;
+            height: auto;
+            border: none;
+            background: #FFFFFF;
+            padding: 20px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .card--line {
+            width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            background: none;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .card--line-content {
+            width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            background: none;
+            padding: 20px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .button-signup {
+            width: 250px;
+            height: 60px;
+            border: none;
+            background: none;
+            color: #0288D1;
+            border-radius: 10px;
+
+            & {
+                transition-duration: 0.4s;
+            }
+
+            &:hover {
+                width: 200px;
+                color: #FFFFFF;
+                background: #0288D1;
+            }
+        }
+
+        .button-login {
+            width: 250px;
+            height: 60px;
+            border: none;
+            background: #0288D1;
+            color: #FFFFFF;
+            border-radius: 10px;
+
+            & {
+                transition-duration: 0.4s;
+            }
+
+            &:hover {
+                width: 300px;
+                color: #0288D1;
+                background: #FFFFFF;
+            }
+        }
+
+        .post {
+            width: 100%;
+            height: 25px;
+            outline: none;
+            /* padding: 10px; */
+            border: none;
+        }
+
+        i {
+            /* background: #0288D1; */
+            color: #FFFFFF;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .text--content {
+            font-family: 'Poppins', sans-serif;
+            color: #424242;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body style="background: #F5F5F5">
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+{% block content %}
+     
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base/main.html' %}
+{% block content %}
+    <div class="card--all">
+        <div class="card--profile mt-5" style="width: 300px;">
+            <font style="background: #0097A7;color:#FFFFFF;padding:3px;border-radius:5px;float: left;display: inline-block;">Back</font>
+            
+            <img src="{{ user.1 }}" width="65px" height="65px" style="margin-right: 35px; border-radius: 50%;object-fit: cover;display: inline-block;">
+            <h4 class="text--content mt-2" style="font-size: 20px;">{{ user.2 }}</h4>
+            <p class="text--content">Online</p>
+        </div>
+        <br>
+        <div class="card--content mt-2" style="width: 300px;display: inline-block;">
+            <h4 class="text--content">ID</h4>
+            <p>#{{ user.0 }}</p>
+            <h4 class="text--content">Username</h4>
+            <p>@{{ user.3 }}</p>
+            <h4 class="text--content">Bio</h4>
+            {% if user.4 %}
+                    <p>@{{ user.4 }}</p>
+            {% else %}
+                    <p>None</p>
+            {% endif %}
+            
+        </div>
+    </div>
+
+    <style>
+        .card--profile {
+            width: 100%;
+            height: auto;
+            border: none;
+            text-align: center;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+{% endblock %}
